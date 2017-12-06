@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>home_win</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.css"/>
+</head>
+<body>
+    <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="flow_frm aui-bar-tab-item aui-active" tapmode onclick="switchTab(0)">
+            <i class="fa fa-bath"></i>
+            <div class="aui-bar-tab-label">流水</div>
+        </div>
+        <div class="wallet_frm aui-bar-tab-item" tapmode onclick="switchTab(1)">
+            <i class="fa fa-briefcase"></i>
+            <div class="aui-bar-tab-label">钱包</div>
+        </div>
+        <div class="me_frm aui-bar-tab-item" tapmode onclick="switchTab(2)">
+            <i class="fa fa-grav"></i>
+            <div class="aui-bar-tab-label">我的</div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../script/global.js"></script>
+<script type="text/javascript">
+    var winHeight;
+    var footerHeight;
+    var frameGroupName = 'home_frame_group';
+
+    apiready = function () {
+        api.parseTapmode();
+        winHeight = api.winHeight;
+        footerHeight = $('#footer').height();
+        openFrameGroup();
+    };
+
+    function openFrameGroup() {
+        api.openFrameGroup({
+            name: frameGroupName,
+            scrollEnabled: false,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: winHeight - footerHeight
+            },
+            index: 0,
+            preload: 3,
+            frames: [{
+                name: 'flow_frm',
+                url: 'flow/flow_frm.html'
+            }, {
+                name: 'wallet_frm',
+                url: 'wallet/wallet_frm.html'
+            }, {
+                name: 'me_frm',
+                url: 'me/me_frm.html'
+            }]
+        }, function (ret, err) {
+            changeFooterClass(ret);
+        });
+    }
+
+    // 更改底部菜单样式
+    function changeFooterClass(ret) {
+        $('footer>div').removeClass('aui-active');
+        $('.' + ret.name).addClass('aui-active');
+    }
+
+    // 切换底部菜单
+    function switchTab(index) {
+        api.setFrameGroupIndex({
+            name: frameGroupName,
+            index: index,
+            scroll: true
+        });
+    }
+</script>
+</html>
