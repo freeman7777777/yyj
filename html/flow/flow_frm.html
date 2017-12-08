@@ -6,23 +6,184 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>流水</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/font-awesome-4.7.0/css/font-awesome.css"/>
+    <style>
+        .main-div {
+            background-color: white;
+        }
+
+        .assets {
+            height: 0.75rem;
+            line-height: 0.75rem;
+            position: relative;
+            top: -1.5rem;
+            color: white;
+        }
+
+        .in-money {
+            color: #F4606C;
+        }
+
+        .out-money {
+            color: #19CAAD;
+        }
+    </style>
 </head>
 <body>
-<div class="aui-content">
-    <ul class="aui-list aui-list-in">
-        <li class="aui-list-item">
-            <div class="aui-list-item-inner">
-                Item1
+<div class="aui-content main-div">
+    <div class="banner">
+        <img src="../../image/flow/banner.jpg" />
+    </div>
+
+    <div class="aui-margin-l-15 aui-margin-r-15 assets">
+        <b class="aui-col-xs-6">本年收入&nbsp;12345.67</b>
+        <b class="aui-col-xs-6 aui-text-right">净资产&nbsp;3214.24</b>
+    </div>
+
+    <div class="aui-content aui-padded-l-15 aui-padded-r-15 aui-padded-b-15">
+        <div class="aui-btn aui-btn-info aui-btn-block">
+            <div class="aui-pull-left">
+                <i class="fa fa-lg fa-pencil-square"></i>
+            </div>
+            <b>记&nbsp;一&nbsp;笔</b>
+        </div>
+    </div>
+
+    <ul class="aui-list aui-media-list">
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">今天</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">午餐 15.00</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
             </div>
         </li>
-        <li class="aui-list-item">
-            <div class="aui-list-item-inner">
-                Item2
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">昨天</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">0.00</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">12月5日</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
             </div>
         </li>
-        <li class="aui-list-item">
-            <div class="aui-list-item-inner">
-                <div class="aui-list-item-title">Item3</div>
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">本周</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">12月4日 - 12月10日</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">上周</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">11月27日 - 12月3日</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">本月</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">12月1日 - 12月31日</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">上月</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">11月1日 - 11月30日</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">今年</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">2017年</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media" style="width: 3rem;">
+                    <img src="../../image/temp/demo5.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title aui-font-size-14">去年</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="in-money">2.33</span></div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <div class="aui-font-size-12">2016年</div>
+                        <div class="aui-list-item-right aui-font-size-14"><span class="out-money">67.20</span></div>
+                    </div>
+                </div>
             </div>
         </li>
     </ul>

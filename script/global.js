@@ -1,5 +1,4 @@
 var globalFunction = {
-
     /**
      * 打开 win
      * @param name window 名字
@@ -39,4 +38,54 @@ var globalFunction = {
             return defaultParam;
         }
     },
+
+    /**
+     * 弹出提示
+     * @param message 提示信息
+     */
+    showToast: function (message) {
+        globalFunction.showToastWithLocation(message, 'bottom');
+    },
+
+    /**
+     * 弹出提示
+     * @param message 提示信息
+     * @param location 位置：top, middle, bottom
+     */
+    showToastWithLocation: function(message, location) {
+        api.toast({
+            msg: message,
+            duration: 2000,
+            location: location
+        })
+    },
+
+    /**
+     * 退出 APP
+     * @param id APP ID
+     */
+    exitApp: function(id) {
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            globalFunction.showToast('再按一次返回键退出 ' + api.appName);
+            api.addEventListener({
+                name: 'keyback'
+            }, function (ret, err) {
+                api.closeWidget({
+                    id: id,
+                    silent: true
+                });
+            });
+            setTimeout(function () {
+                globalFunction.exitApp();
+            }, 2000)
+        });
+    },
+};
+
+var globalColor = {
+    blue: '#039be5',
+    red: '#F4606C',
+    green: '#19CAAD'
 };

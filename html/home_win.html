@@ -7,20 +7,25 @@
     <title>home_win</title>
     <link rel="stylesheet" type="text/css" href="../css/aui/aui.css"/>
     <link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.css"/>
+    <style>
+        .footer-menu {
+            background-image: url(../image/home_win_menu.jpg);
+        }
+    </style>
 </head>
 <body>
-    <footer class="aui-bar aui-bar-tab" id="footer">
+    <footer class="aui-bar aui-bar-tab footer-menu" id="footer">
         <div class="flow_frm aui-bar-tab-item aui-active" tapmode onclick="switchTab(0)">
             <i class="fa fa-bath"></i>
             <div class="aui-bar-tab-label">流水</div>
         </div>
-        <div class="wallet_frm aui-bar-tab-item" tapmode onclick="switchTab(1)">
-            <i class="fa fa-briefcase"></i>
-            <div class="aui-bar-tab-label">钱包</div>
+        <div class="vault_frm aui-bar-tab-item" tapmode onclick="switchTab(1)">
+            <i class="fa fa-trophy"></i>
+            <div class="aui-bar-tab-label">金库</div>
         </div>
-        <div class="me_frm aui-bar-tab-item" tapmode onclick="switchTab(2)">
+        <div class="mystery_frm aui-bar-tab-item" tapmode onclick="switchTab(2)">
             <i class="fa fa-grav"></i>
-            <div class="aui-bar-tab-label">我的</div>
+            <div class="aui-bar-tab-label">玄机</div>
         </div>
     </footer>
 </body>
@@ -33,6 +38,7 @@
     var frameGroupName = 'home_frame_group';
 
     apiready = function () {
+        globalFunction.exitApp('A6065199981565');
         api.parseTapmode();
         winHeight = api.winHeight;
         footerHeight = $('#footer').height();
@@ -55,11 +61,11 @@
                 name: 'flow_frm',
                 url: 'flow/flow_frm.html'
             }, {
-                name: 'wallet_frm',
-                url: 'wallet/wallet_frm.html'
+                name: 'vault_frm',
+                url: 'vault/vault_frm.html'
             }, {
-                name: 'me_frm',
-                url: 'me/me_frm.html'
+                name: 'mystery_frm',
+                url: 'mystery/mystery_frm.html'
             }]
         }, function (ret, err) {
             changeFooterClass(ret);
