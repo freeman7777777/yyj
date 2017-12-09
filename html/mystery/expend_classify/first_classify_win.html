@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>一级支出分类</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/aui/aui.css"/>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav" id="header">
+    <a class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">一级支出分类</div>
+</header>
+
+<footer class="aui-bar aui-bar-tab" id="footer">
+    <div class="aui-bar-tab-item aui-bg-info aui-text-white" tapmode onclick="return false;">
+        加&nbsp;一&nbsp;个
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript" src="../../../script/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../../script/global.js"></script>
+<script type="text/javascript">
+    var winHeight;
+    var headerHeight;
+    var footerHeight;
+
+    apiready = function () {
+        api.parseTapmode();
+        var header = $api.byId('header');
+        $api.fixStatusBar(header);
+        winHeight = api.winHeight;
+        headerHeight = $api.offset(header).h;
+        footerHeight = $('#footer').height();
+
+        api.openFrame({
+            name: 'first_classify_frm',
+            url: 'first_classify_frm.html',
+            pageParam: {
+            },
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerHeight,
+                w: 'auto',
+                h: winHeight - headerHeight - footerHeight
+            }
+
+        });
+    };
+</script>
+</html>

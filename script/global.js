@@ -82,10 +82,21 @@ var globalFunction = {
             }, 2000)
         });
     },
+
+    /**
+     * 对动态生成的元素进行 tapmode 属性解析
+     */
+    parseTapmode: function () {
+        setTimeout(function () {
+            api.parseTapmode();
+        }, 100);
+    }
 };
 
 var globalColor = {
     blue: '#039be5',
     red: '#F4606C',
-    green: '#19CAAD'
+    redActive: '#f9505e',
+    green: '#19CAAD',
+    greenActive: '#36bfa9'
 };

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>我的</title>
+    <title>玄机</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui/aui.css"/>
 </head>
 <body>
 <div class="aui-content">
     <section class="aui-grid aui-margin-b-15">
         <div class="aui-row">
-            <div class="aui-col-xs-4">
+            <div class="aui-col-xs-4" tapmode onclick="openWin('first_classify_win');">
                 <i class="aui-iconfont aui-icon-home"></i>
                 <div class="aui-grid-label">支出分类</div>
             </div>
@@ -55,5 +55,8 @@
 <script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../script/global.js"></script>
 <script type="text/javascript">
+    function openWin(name) {
+        globalFunction.openWin(name, 'expend_classify/' + name + '.html');
+    }
 </script>
 </html>
