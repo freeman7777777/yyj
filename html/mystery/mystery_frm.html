@@ -6,45 +6,71 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>玄机</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui/aui.css"/>
+    <style>
+        .menu-container {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .page-container {
+            background: white url(../../image/mystery/mystery_background.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        section {
+            margin-top: 4.1rem;
+        }
+
+        .aui-iconfont {
+            color: white;
+            font-size: 2rem !important;
+            font-weight: 900 !important;
+        }
+
+        .aui-grid-label {
+            color: white;
+            font-size: 0.5rem !important;
+            opacity: 0.2;
+        }
+    </style>
 </head>
 <body>
-<div class="aui-content">
-    <section class="aui-grid aui-margin-b-15">
+<div class="aui-content page-container">
+    <section class="aui-grid aui-margin-b-15 menu-container">
         <div class="aui-row">
-            <div class="aui-col-xs-4" tapmode onclick="openWin('first_classify_win');">
-                <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-col-xs-4" tapmode onclick="openWin('first_expend_classify_win');">
+                <i class="aui-iconfont">☱</i>
                 <div class="aui-grid-label">支出分类</div>
             </div>
             <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-gear"></i>
-                <div class="aui-grid-label">收入分类</div>
+                <i class="aui-iconfont">☰</i>
+                <div class="aui-grid-label">金库管理</div>
             </div>
             <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-map"></i>
-                <div class="aui-grid-label">账户管理</div>
-            </div>
-            <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-calendar"></i>
+                <i class="aui-iconfont">☴</i>
                 <div class="aui-grid-label">借出分类</div>
             </div>
             <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-date"></i>
+                <i class="aui-iconfont">☲</i>
+                <div class="aui-grid-label">收入分类</div>
+            </div>
+            <div class="aui-col-xs-4">
+                <i class="aui-iconfont">&nbsp;</i>
+                <div class="aui-grid-label">&nbsp;</div>
+            </div>
+            <div class="aui-col-xs-4">
+                <i class="aui-iconfont">☵</i>
                 <div class="aui-grid-label">借入分类</div>
             </div>
-        </div>
-    </section>
-    <section class="aui-grid aui-margin-b-15">
-        <div class="aui-row">
             <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-home"></i>
+                <i class="aui-iconfont">☳</i>
                 <div class="aui-grid-label">借贷中心</div>
             </div>
             <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-gear"></i>
+                <i class="aui-iconfont">☷</i>
                 <div class="aui-grid-label">统计中心</div>
             </div>
             <div class="aui-col-xs-4">
-                <i class="aui-iconfont aui-icon-map"></i>
+                <i class="aui-iconfont">☶</i>
                 <div class="aui-grid-label">数据导出</div>
             </div>
         </div>
@@ -55,6 +81,10 @@
 <script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../script/global.js"></script>
 <script type="text/javascript">
+    window.onload = function () {
+        $('.page-container').height(667)
+    };
+
     function openWin(name) {
         globalFunction.openWin(name, 'expend_classify/' + name + '.html');
     }
