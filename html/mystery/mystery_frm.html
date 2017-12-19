@@ -81,8 +81,8 @@
 <script type="text/javascript" src="../../script/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../script/global.js"></script>
 <script type="text/javascript">
-    window.onload = function () {
-        $('.page-container').height(667)
+    apiready = function () {
+        $('.page-container').height(api.winHeight);
     };
 
     function openWin(name) {

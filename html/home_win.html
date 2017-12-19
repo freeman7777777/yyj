@@ -59,23 +59,27 @@
             preload: 3,
             frames: [{
                 name: 'flow_frm',
-                url: 'flow/flow_frm.html'
+                url: 'flow/flow_frm.html',
+                vScrollBarEnabled: false
             }, {
                 name: 'vault_frm',
-                url: 'vault/vault_frm.html'
+                url: 'vault/vault_frm.html',
+                vScrollBarEnabled: false
             }, {
                 name: 'mystery_frm',
-                url: 'mystery/mystery_frm.html'
+                url: 'mystery/mystery_frm.html',
+                vScrollBarEnabled: false,
+                scrollEnabled: false
             }]
         }, function (ret, err) {
-            changeFooterClass(ret);
+            changeFooterClass(ret.name);
         });
     }
 
     // 更改底部菜单样式
-    function changeFooterClass(ret) {
+    function changeFooterClass(name) {
         $('footer>div').removeClass('aui-active');
-        $('.' + ret.name).addClass('aui-active');
+        $('.' + name).addClass('aui-active');
     }
 
     // 切换底部菜单
